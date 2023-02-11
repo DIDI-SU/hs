@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.make-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+.text-right {
+  @apply flex items-start;
+}
