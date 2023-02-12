@@ -4,6 +4,7 @@ import MovieTitle from "./\bMovieTitle/\bMovieTitle";
 import Script from "./Script/Script";
 import BigCard from "./BigCard/BigCard";
 import MovieInfo from "./MovieInfo/MovieInfo";
+import FinalInfo from "./FinalInfo/FinalInfo";
 
 function App() {
   return (
@@ -20,9 +21,12 @@ function App() {
             <MovieInfo />
           </section>
         </article>
+        <section className="   max-w-xl make-center relative bottom-[90px] border border-whit/50 m-4 rounded-md p-4 ">
+          <FinalInfo />
+        </section>
       </Main>
-      <footer className=" w-full bg-[#5788C8] fixed bottom-0  p-4 flex items-center justify-center">
-        <button>예매하기</button>
+      <footer className=" w-full bg-[#5788C8] fixed bottom-0  p-4 flex items-center justify-center  ">
+        <button>D-14부터 가능해요</button>
       </footer>
     </>
   );
