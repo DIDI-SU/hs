@@ -25,8 +25,28 @@ function App() {
           <FinalInfo />
         </section>
       </Main>
-      <footer className=" w-full bg-[#5788C8] fixed bottom-0  p-4 flex items-center justify-center  ">
-        <button>D-14부터 가능해요</button>
+      <footer className=" w-full bg-[#5788C8] fixed bottom-0  p-4 flex items-center justify-center  hover:cursor-pointer hover:bg-[#5883b7] ">
+        <label
+          htmlFor="my-modal-4"
+          className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7] "
+        >
+          예매하기
+        </label>
+
+        {/* Put this part before </body> tag */}
+        <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+        <label htmlFor="my-modal-4" className="modal cursor-pointer">
+          <label className="modal-box relative" htmlFor="">
+            <div className=" make-center">
+              <h3 className="text-lg font-bold">로그인</h3>
+            </div>
+            <div className=" make-center">
+              <input type="text" className=" p-2 m-1 rounded-md" />
+              <input type="password" className=" p-2 m-1 rounded-md" />
+              <button className="btn  p-2   w-48  m-1">로그인하기</button>
+            </div>
+          </label>
+        </label>
       </footer>
     </>
   );
