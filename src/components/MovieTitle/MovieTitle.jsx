@@ -1,5 +1,5 @@
 import React from "react";
-import MiniTag from "../MiniTag/MiniTag";
+import MiniTag from "../UI/MiniTag/MiniTag";
 const TITLE = ["단독모임", "온리호상", "절찬영업"];
 
 const MovieTitle = () => {
