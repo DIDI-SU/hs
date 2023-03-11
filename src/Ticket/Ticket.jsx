@@ -1,8 +1,11 @@
 import React from "react";
 import { useContext, useState } from "react";
+import Map from "../components/Map/Map";
 import { UserContext } from "../context/UserContext";
 
 const TICKET_TEXT = ["편안한 관람을 위해 두손은 가볍게 방문해주세요"];
+const FINDROAD =
+  "https://map.kakao.com/link/to/영등포구 도림로125길 6 2층,37.513314100557,126.895787743236";
 
 const Ticket = () => {
   const { isParticipate, handleParticipate } = useContext(UserContext);
@@ -56,13 +59,19 @@ const Ticket = () => {
           </button>
         </section>
       </article>
+      <Map />
       <article className="w-3/5">
         <div className=" flex flex-row border boreder-1  rounded-md  mt-[20px]">
           <button className=" btn bg-transparent border-0 border-r-[1px] border-white rounded-none flex items-center  w-1/2 ">
             <p>공유하기</p>
           </button>
-          <button className=" btn bg-transparent border-0  border-white rounded-none flex items-center  w-1/2 ">
-            <p>위치안내</p>
+          <button
+            className=" btn bg-transparent border-0  border-white rounded-none flex items-center  w-1/2 "
+            onClick={() => {
+              window.open(FINDROAD);
+            }}
+          >
+            <p>가는길 검색하기</p>
           </button>
         </div>
       </article>

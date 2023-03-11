@@ -4,7 +4,7 @@ const TITLE = ["단독모임", "온리호상", "절찬영업"];
 
 const MovieTitle = () => {
   return (
-    <section className=" flex flex-col items-center justify-center my-3 relative bottom-[120px] ">
+    <section className=" flex flex-col items-center justify-center my-3 relative  ">
       <div className=" flex my-2">
         {TITLE.map((item) => (
           <MiniTag title={item} />
