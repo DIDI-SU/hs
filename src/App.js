@@ -18,9 +18,8 @@ const TEXT = [
   "포스터는 lily(@suicideroom4two)님의 커미션으로 제작되었습니다",
 ];
 
-export const API = "http://localhost:1337/api";
-export const AUTH_TOKEN = "authToken";
-export const BEARER = "Bearer";
+export const API = "http://localhost:1337/api/guest";
+export const IMAGE = "http://localhost:1337/api/upload/files";
 
 function App() {
   const [usersInput, setUsersInput] = useState({ id: "", pw: "" });

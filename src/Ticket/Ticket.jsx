@@ -1,18 +1,21 @@
 import React from "react";
-import FinalInfo from "../components/FinalInfo/FinalInfo";
+import { useContext, useState } from "react";
+import { UserContext } from "../context/UserContext";
 
 const TICKET_TEXT = ["편안한 관람을 위해 두손은 가볍게 방문해주세요"];
 
 const Ticket = () => {
+  const { isParticipate, handleParticipate } = useContext(UserContext);
+
   return (
-    <main className="max-w-2xl make-center   mx-auto my-[20px]">
-      <article className="bg-white p-6 rounded-md w-3/5">
+    <main className="max-w-2xl make-center   mx-auto my-[50px]">
+      <article className="bg-white p-6 rounded-md w-4/5">
         <section className=" border-b-2 my-2 ">
           <div>
             <h1 className=" text-[14px] text-black font-semibold">
               모바일 티켓
             </h1>
-            <h2 className=" text-[8px] my-1">HS800325-</h2>
+            <h2 className=" text-[8px] my-1">HS781220-800326</h2>
           </div>
         </section>
         <section className="  border-b-2   py-2">
@@ -36,20 +39,25 @@ const Ticket = () => {
         <section className="flex  text-[8px] justify-start my-1 flex-col  py-2">
           <p className=" mr-14 text-[#494d72]">좌석정보</p>
           <div>
-            <p>참여자이름</p>
+            <p>{isParticipate.guestid}</p>
           </div>
         </section>
         <section>
-          <button className="btn w-full  bg-[#494d72]">입장확인</button>
-        </section>
-      </article>
-      <article>
-        <section className="border border-whit/50  w-3/5 rounded-md p-4  make-center   mx-auto  my-4">
-          <FinalInfo data={TICKET_TEXT} />
+          <button
+            className={`btn w-full  bg-[#494d72] btn ${
+              isParticipate.participate && "btn-disabled"
+            }`}
+            onClick={(e) => {
+              handleParticipate(e);
+              console.log(isParticipate);
+            }}
+          >
+            {isParticipate.participate ? "입장 완료" : "입장확인"}
+          </button>
         </section>
       </article>
       <article className="w-3/5">
-        <div className=" flex flex-row border boreder-1  rounded-md  ">
+        <div className=" flex flex-row border boreder-1  rounded-md  mt-[20px]">
           <button className=" btn bg-transparent border-0 border-r-[1px] border-white rounded-none flex items-center  w-1/2 ">
             <p>공유하기</p>
           </button>

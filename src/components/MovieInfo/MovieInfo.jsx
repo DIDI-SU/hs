@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { IMAGE } from "../../App";
+import CarouselItem from "../UI/Carousel/CarouselItem";
+import CarouselWapper from "../UI/Carousel/CarouselWapper";
 import InfoTable from "./InfoTable/InfoTable";
 
 const MOVIE_DATA = [
@@ -18,7 +21,32 @@ const GIFT_DATA = [
 
 const MovieInfo = () => {
   const [chosenTable, setChosenTable] = useState("movieInfo");
-  console.log(chosenTable);
+  const [images, steImages] = useState([]);
+
+  const userLogin = async () => {
+    try {
+      const response = await fetch(`${IMAGE}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "image/jpeg",
+        },
+      });
+
+      const data = await response.json();
+
+      if (data?.error) {
+        throw data?.error;
+      } else {
+        steImages([...data]);
+      }
+    } catch (error) {
+      console.log(error?.message ?? "Something went wrong!");
+    } finally {
+    }
+  };
+  useEffect(() => {
+    userLogin();
+  }, []);
 
   return (
     <>
@@ -49,7 +77,14 @@ const MovieInfo = () => {
         {chosenTable === "movieInfo" ? (
           <InfoTable data={MOVIE_DATA} />
         ) : (
-          <InfoTable data={GIFT_DATA} />
+          <>
+            <InfoTable data={GIFT_DATA} />
+            <CarouselWapper>
+              {images.map((items) => {
+                return <CarouselItem item={items} />;
+              })}
+            </CarouselWapper>
+          </>
         )}
       </div>
     </>
