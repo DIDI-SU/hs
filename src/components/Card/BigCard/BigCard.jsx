@@ -2,7 +2,12 @@ import React from "react";
 
 const BigCard = () => {
   return (
-    <div className=" my-5">
+    <div
+      className=" my-5 hover:cursor-pointer"
+      onClick={() => {
+        window.open("https://www.youtube.com/watch?v=W4t187PHz5A");
+      }}
+    >
       <img src="./articleimg/article.JPG" className=" w-72 rounded-md  h-52" />
       <div className=" absolute w-72 ">
         <div className=" relative bottom-[39px] w-full   bg-black rounded-b-md opacity-[0.5]">

@@ -19,6 +19,12 @@ const GIFT_DATA = [
   { title: "키링", content: "1개" },
 ];
 
+const IMG = [
+  { id: 1, alt: "key", name: "key" },
+  { id: 2, alt: "cup", name: "cup" },
+  { id: 3, alt: "all", name: "all" },
+];
+
 const MovieInfo = () => {
   const [chosenTable, setChosenTable] = useState("movieInfo");
   const [images, steImages] = useState([]);
@@ -79,11 +85,14 @@ const MovieInfo = () => {
         ) : (
           <>
             <InfoTable data={GIFT_DATA} />
-            <CarouselWapper>
-              {images.map((items) => {
-                return <CarouselItem item={items} />;
-              })}
-            </CarouselWapper>
+
+            <section className=" flex  items-center justify-center">
+              <CarouselWapper>
+                {IMG.map((items) => {
+                  return <CarouselItem item={items} />;
+                })}
+              </CarouselWapper>
+            </section>
           </>
         )}
       </div>

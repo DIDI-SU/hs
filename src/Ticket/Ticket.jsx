@@ -11,7 +11,6 @@ const FINDROAD =
 
 const Ticket = () => {
   const { isParticipate, handleParticipate } = useContext(UserContext);
-  // 컴포넌트 다운로드 함수
   const onDownloadBtn = () => {
     domtoimage.toBlob(document.querySelector(".card")).then((blob) => {
       saveAs(blob, "card.png");
