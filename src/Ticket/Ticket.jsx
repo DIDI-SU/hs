@@ -2,6 +2,8 @@ import React from "react";
 import { useContext, useState } from "react";
 import Map from "../components/Map/Map";
 import { UserContext } from "../context/UserContext";
+import domtoimage from "dom-to-image";
+import { saveAs } from "file-saver";
 
 const TICKET_TEXT = ["편안한 관람을 위해 두손은 가볍게 방문해주세요"];
 const FINDROAD =
@@ -9,10 +11,16 @@ const FINDROAD =
 
 const Ticket = () => {
   const { isParticipate, handleParticipate } = useContext(UserContext);
+  // 컴포넌트 다운로드 함수
+  const onDownloadBtn = () => {
+    domtoimage.toBlob(document.querySelector(".card")).then((blob) => {
+      saveAs(blob, "card.png");
+    });
+  };
 
   return (
     <main className="max-w-2xl make-center   mx-auto my-[50px]">
-      <article className="bg-white p-6 rounded-md w-4/5">
+      <article className="card  bg-white p-6 rounded-md w-4/5">
         <section className=" border-b-2 my-2 ">
           <div>
             <h1 className=" text-[14px] text-black font-semibold">
@@ -62,7 +70,12 @@ const Ticket = () => {
       <Map />
       <article className="w-3/5">
         <div className=" flex flex-row border boreder-1  rounded-md  mt-[20px]">
-          <button className=" btn bg-transparent border-0 border-r-[1px] border-white rounded-none flex items-center  w-1/2 ">
+          <button
+            className=" btn bg-transparent border-0 border-r-[1px] border-white rounded-none flex items-center  w-1/2 "
+            onClick={() => {
+              onDownloadBtn();
+            }}
+          >
             <p>공유하기</p>
           </button>
           <button
