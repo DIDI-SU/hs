@@ -40,9 +40,9 @@ const Login = (data) => {
     <>
       <label
         htmlFor="my-modal-4"
-        className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7] "
+        className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7] btn-disabled "
       >
-        예매하기
+        D-3에 만나요!
       </label>
 
       <input type="checkbox" id="my-modal-4" className="modal-toggle" />
