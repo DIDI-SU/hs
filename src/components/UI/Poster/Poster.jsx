@@ -2,7 +2,7 @@ import React from "react";
 
 const Poster = () => {
   return (
-    <section className="flex flex-col items-center justify-center -z-10  ">
+    <section className="flex flex-col items-center justify-center   ">
       <img
         src="./poster/poster.png"
         className="w-full h-100"
