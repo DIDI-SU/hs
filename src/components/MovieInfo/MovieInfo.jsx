@@ -27,32 +27,32 @@ const IMG = [
 
 const MovieInfo = () => {
   const [chosenTable, setChosenTable] = useState("movieInfo");
-  const [images, steImages] = useState([]);
+  // const [images, steImages] = useState([]);
 
-  const userLogin = async () => {
-    try {
-      const response = await fetch(`${IMAGE}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "image/jpeg",
-        },
-      });
+  // const userLogin = async () => {
+  //   try {
+  //     const response = await fetch(`${IMAGE}`, {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "image/jpeg",
+  //       },
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (data?.error) {
-        throw data?.error;
-      } else {
-        steImages([...data]);
-      }
-    } catch (error) {
-      console.log(error?.message ?? "Something went wrong!");
-    } finally {
-    }
-  };
-  useEffect(() => {
-    userLogin();
-  }, []);
+  //     if (data?.error) {
+  //       throw data?.error;
+  //     } else {
+  //       steImages([...data]);
+  //     }
+  //   } catch (error) {
+  //     console.log(error?.message ?? "Something went wrong!");
+  //   } finally {
+  //   }
+  // };
+  // useEffect(() => {
+  //   userLogin();
+  // }, []);
 
   return (
     <>
