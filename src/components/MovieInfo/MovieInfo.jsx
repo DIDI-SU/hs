@@ -19,40 +19,34 @@ const GIFT_DATA = [
   { title: "키링", content: "1개" },
 ];
 
-const IMG = [
-  { id: 1, alt: "key", name: "key" },
-  { id: 2, alt: "cup", name: "cup" },
-  { id: 3, alt: "all", name: "all" },
-];
-
 const MovieInfo = () => {
   const [chosenTable, setChosenTable] = useState("movieInfo");
-  // const [images, steImages] = useState([]);
+  const [images, steImages] = useState([]);
 
-  // const userLogin = async () => {
-  //   try {
-  //     const response = await fetch(`${IMAGE}`, {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "image/jpeg",
-  //       },
-  //     });
+  const userLogin = async () => {
+    try {
+      const response = await fetch(`${IMAGE}`, {
+        method: "GET",
+        headers: {
+          Accept: "application / json",
+        },
+      });
 
-  //     const data = await response.json();
+      const data = await response.json();
 
-  //     if (data?.error) {
-  //       throw data?.error;
-  //     } else {
-  //       steImages([...data]);
-  //     }
-  //   } catch (error) {
-  //     console.log(error?.message ?? "Something went wrong!");
-  //   } finally {
-  //   }
-  // };
-  // useEffect(() => {
-  //   userLogin();
-  // }, []);
+      if (data?.error) {
+        throw data?.error;
+      } else {
+        steImages([...data]);
+      }
+    } catch (error) {
+      console.log(error?.message ?? "Something went wrong!");
+    } finally {
+    }
+  };
+  useEffect(() => {
+    userLogin();
+  }, []);
 
   return (
     <>
@@ -88,7 +82,7 @@ const MovieInfo = () => {
 
             <section className=" flex  items-center justify-center">
               <CarouselWapper>
-                {IMG.map((items) => {
+                {images.map((items) => {
                   return <CarouselItem item={items} />;
                 })}
               </CarouselWapper>

@@ -4,43 +4,43 @@ import { API } from "../App";
 import { UserContext } from "../context/UserContext";
 
 const Login = (data) => {
-  // const { usersInput, setUsersInput } = data;
-  // const { setParticipate, isParticipate, handleParticipate } =
-  //   useContext(UserContext);
-  // const [error, setError] = useState("");
-  // const nav = useNavigate();
-  // const userLogin = async (values) => {
-  //   try {
-  //     const response = await fetch(`${API}?guestid=${values.id}}`, {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
+  const { usersInput, setUsersInput } = data;
+  const { setParticipate, isParticipate, handleParticipate } =
+    useContext(UserContext);
+  const [error, setError] = useState("");
+  const nav = useNavigate();
+  const userLogin = async (values) => {
+    try {
+      const response = await fetch(`${API}?guestid=${values.id}}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-  //     const data = await response.json();
+      const data = await response.json();
 
-  //     if (data?.error) {
-  //       throw data?.error;
-  //     } else {
-  //       if (data.data.attributes.guestid === values.id) {
-  //         setParticipate(data.data.attributes);
-  //         nav("/ticket");
-  //       } else {
-  //         nav("/");
-  //       }
-  //     }
-  //   } catch (error) {
-  //     setError(error?.message ?? "Something went wrong!");
-  //   } finally {
-  //   }
-  // };
+      if (data?.error) {
+        throw data?.error;
+      } else {
+        if (data.data[0].attributes.guestid === values.id) {
+          setParticipate(data.data[0].attributes);
+          nav("/ticket");
+        } else {
+          nav("/");
+        }
+      }
+    } catch (error) {
+      setError(error?.message ?? "Something went wrong!");
+    } finally {
+    }
+  };
 
   return (
     <>
       <label
         htmlFor="my-modal-4"
-        className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7] btn-disabled "
+        className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7] "
       >
         D-3에 만나요!
       </label>
@@ -64,7 +64,7 @@ const Login = (data) => {
             <button
               className="btn  p-2   w-48  m-1"
               onClick={() => {
-                // userLogin(usersInput);
+                userLogin(usersInput);
               }}
             >
               티켓 확인하기

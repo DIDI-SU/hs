@@ -1,12 +1,16 @@
 import React from "react";
+import { IMAGE } from "../../../App";
 
 const CarouselItem = ({ item }) => {
-  // const { url, alt } = item;
-  //http://localhost:1337${url}
-  const { id, name, alt } = item;
+  const { url, alt, name, id } = item;
+
   return (
-    <div className="carousel-item w-full " key={id + name}>
-      <img src={`./before/${name}.png`} alt={alt} className="w-full" />
+    <div className="carousel-item w-full " key={alt + 1}>
+      <img
+        src={`https://hs-backs.herokuapp.com${url}`}
+        alt={alt}
+        className="w-full"
+      />
     </div>
   );
 };

@@ -28,8 +28,8 @@ const TEXT = [
   },
 ];
 
-export const API = "http://localhost:1337/api/guest";
-export const IMAGE = "http://localhost:1337/api/upload/files";
+export const API = "https://hs-backs.herokuapp.com/api/guests";
+export const IMAGE = "https://hs-backs.herokuapp.com/api/upload/files";
 
 function App() {
   const [usersInput, setUsersInput] = useState({ id: "", pw: "" });
