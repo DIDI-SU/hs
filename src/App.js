@@ -28,7 +28,8 @@ const TEXT = [
   },
 ];
 
-export const API = "https://hs-backs.herokuapp.com/api/guests";
+export const API =
+  "https://hs-backs.herokuapp.com/api/guests?filters[guestid][$eq]=";
 export const IMAGE = "https://hs-backs.herokuapp.com/api/upload/files";
 
 function App() {

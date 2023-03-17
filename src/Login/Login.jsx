@@ -10,8 +10,9 @@ const Login = (data) => {
   const [error, setError] = useState("");
   const nav = useNavigate();
   const userLogin = async (values) => {
+    console.log(API + values.id);
     try {
-      const response = await fetch(`${API}?guestid=${values.id}}`, {
+      const response = await fetch(`${API}${values.id}}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -19,6 +20,7 @@ const Login = (data) => {
       });
 
       const data = await response.json();
+      console.log(response);
 
       if (data?.error) {
         throw data?.error;
@@ -40,7 +42,7 @@ const Login = (data) => {
     <>
       <label
         htmlFor="my-modal-4"
-        className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7] "
+        className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7]  btn-disabled"
       >
         D-3에 만나요!
       </label>
