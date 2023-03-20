@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IMAGE } from "../../App";
+
 import CarouselItem from "../UI/Carousel/CarouselItem";
 import CarouselWapper from "../UI/Carousel/CarouselWapper";
 import InfoTable from "./InfoTable/InfoTable";

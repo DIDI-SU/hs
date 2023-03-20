@@ -27,7 +27,7 @@ const TEXT = [
     text: "특전의 양도및 판매를 지양해 주시길 바랍니다",
   },
 ];
-
+export const ROOT_API = "https://hs-backs.herokuapp.com";
 export const API =
   "https://hs-backs.herokuapp.com/api/guests?filters[guestid][$eq]=";
 export const IMAGE = "https://hs-backs.herokuapp.com/api/upload/files";
