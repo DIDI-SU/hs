@@ -27,6 +27,7 @@ const Login = (data) => {
       } else {
         if (data.data[0].attributes.guestid === values.id) {
           setParticipate(data.data[0].attributes);
+
           nav("/ticket");
         } else {
           nav("/");
@@ -42,7 +43,7 @@ const Login = (data) => {
     <>
       <label
         htmlFor="my-modal-4"
-        className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7]  btn-disabled"
+        className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7]  "
       >
         D-3에 만나요!
       </label>
