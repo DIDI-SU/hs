@@ -15,6 +15,7 @@ const Login = (data) => {
       const response = await fetch(`${API}${values.id}}`, {
         method: "GET",
         headers: {
+          mode: "no-cors",
           "Content-Type": "application/json",
         },
       });
