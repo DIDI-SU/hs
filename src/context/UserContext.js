@@ -4,7 +4,7 @@ export const UserContext = createContext();
 
 const UserDataProvider = ({ children }) => {
   const [isParticipate, setParticipate] = useState({
-    id: "",
+    name: "",
     paticipate: false,
   });
 

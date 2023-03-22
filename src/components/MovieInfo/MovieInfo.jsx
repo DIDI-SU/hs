@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { IMAGE } from "../../App";
+import React, { useState } from "react";
 
 import CarouselItem from "../UI/Carousel/CarouselItem";
 import CarouselWapper from "../UI/Carousel/CarouselWapper";
@@ -20,34 +19,23 @@ const GIFT_DATA = [
   { title: "키링", content: "1개" },
 ];
 
+const GIFT = [
+  { id: 1, url: "https://i.ibb.co/ZXTrFYV/key.png", alt: "컵안에 키링두개" },
+  {
+    id: 2,
+    url: "https://i.ibb.co/0mb17Ry/all.png",
+    alt: "포스터와 컵 그리고 키링두개",
+  },
+  {
+    id: 3,
+    url: "https://i.ibb.co/tHXSmyQ/cup.png",
+    alt: "컵에 커피가 들어있다",
+  },
+];
+
 const MovieInfo = () => {
   const [chosenTable, setChosenTable] = useState("movieInfo");
   const [images, steImages] = useState([]);
-
-  const userLogin = async () => {
-    try {
-      const response = await fetch(`${IMAGE}`, {
-        method: "GET",
-        headers: {
-          Accept: "application / json",
-        },
-      });
-
-      const data = await response.json();
-
-      if (data?.error) {
-        throw data?.error;
-      } else {
-        steImages([...data]);
-      }
-    } catch (error) {
-      console.log(error?.message ?? "Something went wrong!");
-    } finally {
-    }
-  };
-  useEffect(() => {
-    userLogin();
-  }, []);
 
   return (
     <>
@@ -83,7 +71,7 @@ const MovieInfo = () => {
 
             <section className=" flex  items-center justify-center">
               <CarouselWapper>
-                {images.map((items) => {
+                {GIFT.map((items) => {
                   return <CarouselItem item={items} />;
                 })}
               </CarouselWapper>

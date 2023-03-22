@@ -9,35 +9,23 @@ const Login = (data) => {
     useContext(UserContext);
   const [error, setError] = useState("");
   const nav = useNavigate();
-  const userLogin = async (values) => {
-    console.log(API + values.id);
-    try {
-      const response = await fetch(`${API}${values.id}}`, {
-        method: "GET",
-        headers: {
-          mode: "no-cors",
-          "Content-Type": "application/json",
-        },
-      });
 
-      const data = await response.json();
-      console.log(response);
-
-      if (data?.error) {
-        throw data?.error;
-      } else {
-        if (data.data[0].attributes.guestid === values.id) {
-          setParticipate(data.data[0].attributes);
-
-          nav("/ticket");
-        } else {
-          nav("/");
+  const userLogin = (input) => {
+    fetch("https://20seki-hs.netlify.app/data/userData.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(isParticipate);
+        if (data) {
+          if (data.filter((item) => item.name === input).length > 0) {
+            setParticipate(data.filter((item) => item.name === input));
+            nav("/ticket");
+          } else {
+            alert("아이디를 다시 입력해주세요");
+          }
         }
-      }
-    } catch (error) {
-      setError(error?.message ?? "Something went wrong!");
-    } finally {
-    }
+      });
   };
 
   return (
@@ -59,9 +47,7 @@ const Login = (data) => {
             <input
               type="text"
               onChange={(e) => {
-                setUsersInput((prve) => {
-                  return { ...prve, id: e.target.value };
-                });
+                setUsersInput(e.target.value.trim());
               }}
               className=" p-2 m-1 rounded-md bg-[#B6C6D3] text-black"
             />
