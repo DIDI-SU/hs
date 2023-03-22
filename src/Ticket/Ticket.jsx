@@ -52,9 +52,7 @@ const Ticket = () => {
         </section>
         <section>
           <button
-            className={`btn w-full  bg-[#494d72] btn ${
-              isParticipate[0].participate && "btn-disabled"
-            }`}
+            className={"btn w-full  bg-[#494d72] btn-disabled"}
             onClick={(e) => {
               handleParticipate(e);
             }}
