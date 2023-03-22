@@ -4,8 +4,6 @@ import Map from "../components/Map/Map";
 import { UserContext } from "../context/UserContext";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
-
-const TICKET_TEXT = ["편안한 관람을 위해 두손은 가볍게 방문해주세요"];
 const FINDROAD =
   "https://map.kakao.com/link/to/영등포구 도림로125길 6 2층,37.513314100557,126.895787743236";
 
@@ -59,7 +57,6 @@ const Ticket = () => {
             }`}
             onClick={(e) => {
               handleParticipate(e);
-              console.log(isParticipate);
             }}
           >
             {isParticipate[0].participate ? "입장 완료" : "입장확인"}

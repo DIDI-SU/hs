@@ -16,7 +16,6 @@ const Login = (data) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(isParticipate);
         if (data) {
           if (data.filter((item) => item.name === input).length > 0) {
             setParticipate(data.filter((item) => item.name === input));
@@ -34,7 +33,7 @@ const Login = (data) => {
         htmlFor="my-modal-4"
         className="btn bg-[#5788C8] border-0  hover:bg-[#5883b7]  "
       >
-        D-3에 만나요!
+        티켓확인하기
       </label>
 
       <input type="checkbox" id="my-modal-4" className="modal-toggle" />
