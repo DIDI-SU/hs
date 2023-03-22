@@ -49,7 +49,7 @@ const Ticket = () => {
         <section className="flex  text-[8px] justify-start my-1 flex-col  py-2">
           <p className=" mr-14 text-[#494d72]">좌석정보</p>
           <div>
-            <p>{isParticipate.guestid}</p>
+            <p>{isParticipate.name}</p>
           </div>
         </section>
         <section>
