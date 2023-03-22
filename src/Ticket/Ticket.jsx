@@ -49,20 +49,20 @@ const Ticket = () => {
         <section className="flex  text-[8px] justify-start my-1 flex-col  py-2">
           <p className=" mr-14 text-[#494d72]">좌석정보</p>
           <div>
-            <p>{isParticipate.name}</p>
+            <p>{isParticipate[0].name}</p>
           </div>
         </section>
         <section>
           <button
             className={`btn w-full  bg-[#494d72] btn ${
-              isParticipate.participate && "btn-disabled"
+              isParticipat.participate && "btn-disabled"
             }`}
             onClick={(e) => {
               handleParticipate(e);
               console.log(isParticipate);
             }}
           >
-            {isParticipate.participate ? "입장 완료" : "입장확인"}
+            {isParticipate[0].participate ? "입장 완료" : "입장확인"}
           </button>
         </section>
       </article>
