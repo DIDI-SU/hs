@@ -9,7 +9,7 @@ const MOVIE_DATA = [
   { title: "장소", content: "D-14공개" },
   { title: "장르", content: "코미디/125분" },
   { title: "등급", content: "청소년관람불가" },
-  { title: "감독", content: "윤떤남자" },
+  { title: "감독", content: "윤" },
 ];
 
 const GIFT_DATA = [
