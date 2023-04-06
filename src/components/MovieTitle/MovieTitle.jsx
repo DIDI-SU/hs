@@ -1,10 +1,10 @@
 import React from "react";
 import MiniTag from "../UI/MiniTag/MiniTag";
-const TITLE = ["단독모임", "온리호상", "절찬영업"];
+const TITLE = ["단독모임", "god", "절찬영업"];
 
 const MovieTitle = () => {
   return (
-    <section className=" flex flex-col items-center justify-center my-3 relative  ">
+    <section className=" flex flex-col items-center justify-center my-3   ">
       <div className=" flex my-2">
         {TITLE.map((item) => (
           <MiniTag title={item} />
